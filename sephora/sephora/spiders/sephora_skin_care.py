@@ -23,7 +23,7 @@ class SephoraSkinCareSpider(scrapy.Spider):
 
     async def parse(self, response):
 
-        for product in response.css('div.css-1qe8tjm'):
+        for product in response.css('a.css-klx76'): # this selector is the problem
             
             yield {
             'title':product.css('span.css-12z2u5.eanm77i0::text').get()
